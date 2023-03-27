@@ -1,0 +1,33 @@
+.background_image {
+    width: 100%;
+    height: 100%;
+}
+
+.tittle {
+    color: white;
+}
+
+.div_father {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(7, 17, 35, 0.822);
+}
+
+.mi-tarjeta {
+    max-width: 80%;
+    width: 53%;
+    margin: 5px;
+}
+
+.button-row {
+    margin: 8px 8px 8px 0;
+}

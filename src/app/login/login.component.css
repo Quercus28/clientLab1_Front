@@ -1,0 +1,28 @@
+.tittle{
+    color: white;
+}
+
+.background_image {
+    width: 100%;
+    height: 100%;
+  }
+
+.div_father {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color:rgba(7, 17, 35, 0.822);
+}
+
+.div_son{
+    margin: 30px;
+}
+
+.button_loggin{
+    width: 100%;
+}
+
+.input_field{
+    width: 100%;
+}

@@ -1,0 +1,22 @@
+<img class="background_image" src="../../assets/Space.jpg">
+
+<div class="div_father">
+    <div class="div_son">
+        <h1 class="tittle">Homologación de Materias</h1>
+        <p>
+            <mat-form-field appearance="fill" class="input_field">
+                <mat-label>Usuario</mat-label>
+                <input matInput [(ngModel)]="username">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="fill" class="input_field">
+                <mat-label>Contraseña</mat-label>
+                <input matInput type="password" [(ngModel)]="password">
+            </mat-form-field>
+        </p>
+        <p>
+            <button mat-flat-button class="button_loggin" (click)="ingresar()">Ingresar</button>
+        </p>
+    </div>
+</div>

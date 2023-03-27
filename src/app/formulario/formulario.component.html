@@ -1,0 +1,18 @@
+<img class="background_image" src="../../assets/Space.jpg">
+
+<div class="div_father">
+    <h1 class="tittle">Solicitudes</h1>
+    <mat-card *ngFor="let item of items" class="mi-tarjeta">
+        <mat-card-header align="start">
+            <mat-card-title>{{ item.titulo }}</mat-card-title>
+            <mat-card-subtitle>{{ item.subtitulo }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content align="start">
+            <p>{{item.contenido}}</p>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-button color="warn" (click)= "buttonDecision('No')">Rechazar</button>
+            <button mat-button color="primary" (click)= "buttonDecision('Sí')">Aprobar</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
