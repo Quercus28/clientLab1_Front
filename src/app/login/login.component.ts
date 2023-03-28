@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginService } from '../login/login.service';
+import { ReCaptchaV3Service } from 'ng-recaptcha';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -19,10 +21,23 @@ export class LoginComponent {
   correct_username = "Quercus";
   correct_password = "1234";
 
-  constructor(private loginService: LoginService,private http: HttpClient, private _snackBar: MatSnackBar, private router: Router) {
+  constructor(private recaptchaV3Service: ReCaptchaV3Service, private loginService: LoginService,private http: HttpClient, private _snackBar: MatSnackBar, private router: Router) {
   }
 
+  public send(form: NgForm): void {
+    if (form.invalid) {
+      for (const control of Object.keys(form.controls)) {
+        form.controls[control].markAsTouched();
+      }
+      return;
+    }
 
+    this.recaptchaV3Service.execute('importantAction')
+    .subscribe((token: string) => {
+      console.debug(`Token [${token}] generated`);
+    });
+    this.ingresar();
+  }
 
   ingresar() {
     /*

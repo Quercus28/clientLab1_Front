@@ -15,6 +15,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
+import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
+import { environment } from '../environments/environment';
 
 const routes: Routes = [
   { path: '', component: AppComponent, pathMatch: 'full' },
@@ -41,9 +43,15 @@ const routes: Routes = [
     MatButtonModule,
     MatSnackBarModule,
     MatCardModule,
+    RecaptchaV3Module,
     RouterModule.forRoot(routes),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: RECAPTCHA_V3_SITE_KEY,
+      useValue: environment.recaptcha.siteKey,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
